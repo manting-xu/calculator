@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head><title>Calculator</title></head>
+<h1>Calculator</h1>
+<br/>
+<body>
+	<input type="text" id="number1">
+	<select id="operations">
+		<option value = "+">+</option>
+		<option value = "-">-</option>
+		<option value = "*">*</option>
+		<option value = "/">/</option>
+	</select>
+	<input type = "text" id = "number2">
+	<input type = "submit" id = "submit">
+		<br><br>
+	<script>
+    	var submit = document.getElementById("submit");
+        submit.onclick = function(math)
+        {
+        	var menu = document.getElementById("operations");
+            var result = 0;
+            switch(menu.options[menu.selectedIndex].text)
+            {
+            	case "+":
+                	result = parseInt(document.getElementById("number1").value) + parseInt(document.getElementById("number2").value)
+                	break;
+                case "-":
+                	result = parseInt(document.getElementById("number1").value) - parseInt(document.getElementById("number2").value)
+                	break;
+                case "*":
+                	result = parseInt(document.getElementById("number1").value) * parseInt(document.getElementById("number2").value)
+                	break;
+                case "/":
+                	result = parseInt(document.getElementById("number1").value) / parseInt(document.getElementById("number2").value)
+                	break;
+            }
+            if(isNaN(result) || result == Infinity)
+            	alert("Error");
+            else
+            	alert("Result = " + result);
+        };
+	</script>
+</body> 
+</html>
